@@ -1,0 +1,11 @@
+#+TITLE: MLND TODO
+
+* MLND TODO
+
+  There are things I'd like to do to extend my learning. Here's some
+  ideas.
+
+** Naive Bayes
+
+   + Write a C++ library for tokenising (e.g. implement the CountVector).
+   + Write a C++ library for doing frequency analysis.

@@ -1,0 +1,17 @@
+#+TITLE: Machine Learning Nanodegree
+
+This is a collection of projects and notes from the Udacity Machine
+Learning nanodegree.
+
+* Projects
+
+  One of the big draws for me for the program is building out a
+  collection of projects, learning by doing.
+
+** SMS spam detection
+
+   This uses Naive Bayes to detect SMS spam messages using the
+   [[https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection][UCI
+   SMS Spam Collection Data Set]].
+
+

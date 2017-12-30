@@ -1,4 +1,4 @@
-name: mlnd
+name: mlnd-py36
 channels:
 - anaconda-fusion
 - defaults

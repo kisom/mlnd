@@ -1,0 +1,48 @@
+Meets Specifications
+Please consider the following link that includes many model solutions for the
+Titanic dataset. https://www.kaggle.com/c/titanic/kernels
+
+Answers to Each Question
+
+1. The predictions_0 function has been run and the accuracy of the predictions
+   is reported.
+
+   Reviewer: The predictions_0 function provides the appropriate accuracy.
+
+2. The predictions_1 function has been correctly implemented. The expected
+   accuracy of the predictions is reported.
+
+3. The predictions_2 function has been correctly implemented. The expected
+   accuracy of the predictions is reported.
+
+   Reviewer: Well done for using the appropriate conditioning that provides
+   the appropriate accuracy.
+
+4. The predictions_3 function has been correctly implemented and obtains a
+   prediction accuracy of at least 80%. The approach to the task has been
+   documented, including features that were explored and intermediate steps taken
+   to complete the function.
+
+   It is a good approach to consider different subcategories that might
+   increase the overall information of the model. Did you try to consider
+   subcategories with low survival rate? For example
+
+       if (passenger['Sex'] == "female"):
+            if (passenger['Pclass'] < 3):
+                predictions.append(1)
+            elif (passenger['Age'] > 40):
+                predictions.append(0)
+            else:
+                predictions.append(1)
+
+5. A valid scenario where supervised learning can be applied is reported. A
+   clear outcome variable and at least two potential predictor variables are
+   identified as part of the description.
+
+   Reviewer: You are correct, supervised learning can definitely be applied to
+   predict power grids. You might find this link useful, it includes different
+   models implemented in Python. These models can be employed to solve
+   different or even similar problems,
+   http://scikit-learn.org/stable/supervised_learning.html When considering
+   which model is more appropriate, this link can be very useful guideline
+   http://scikit-learn.org/stable/tutorial/machine_learning_map/

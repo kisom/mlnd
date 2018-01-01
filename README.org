@@ -6,12 +6,27 @@ Learning nanodegree.
 * Projects
 
   One of the big draws for me for the program is building out a
-  collection of projects, learning by doing.
+  collection of projects, learning by doing. Projects that come
+  from the [[https://github.com/udacity/machine-learning][MLND repo]]
+  have "(MLND)" after the project name. At first, all of the projects
+  will have this, but if I decide to do some extracurricular projects
+  and decide to place them in this repo, that will be noted.
 
-** SMS spam detection
+** SMS spam detection (MLND)
 
    This uses Naive Bayes to detect SMS spam messages using the
    [[https://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection][UCI
    SMS Spam Collection Data Set]].
 
+** Titanic survival exploration (MLND)
 
+   This is an optional project that uses a decision tree to predict
+   the survivability of a given passenger from the Titanic. The focus
+   is on exploring a data set and understanding its features.
+
+** Boston housing (MLND)
+
+   This uses a decision tree to predict housing prices in Boston. Unlike
+   the Titanic project, where the decision tree was hand-coded, this
+   uses the scikit-learn implementation. The focus seems to be on understanding
+   metrics for a given model and learning to think critically about datasets.

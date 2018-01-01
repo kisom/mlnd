@@ -11802,7 +11802,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11902,11 +11902,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">minimum_price</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 <span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 <span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 <span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
@@ -12127,7 +12127,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> With only 5 points, it's difficult to say. The R^2 score seems to indicate that the model is fairly predictable, but intuitively, from the data, it doesn't feel like it's a close fit.</p>
+<p><strong>Answer:</strong> Based on the R2 score of 0.92, and given that the R2 score is a value between 0 (unpredictable) and 1 (predictable), it seems like this has successfully captured the variation of the target variable.</p>
 
 </div>
 </div>
@@ -12203,7 +12203,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> There are two main problems we have to consider: first, that if there isn't enough data to train the model on, it will be underfitted --- the model won't have a good picture of the problem, and won't be able to accurately make predictions on or classify new data. However, if there isn't enough data that the model hasn't seen before, we won't know whether the model has been overfitted to the training data, so there needs to be enough data for testing so that we can have some confidence that our model is generally good.</p>
+<p><strong>Answer:</strong> The main benefit to having a testing subset is to verify that the model hasn't been overfitted to the training data; in other words, that the model we have isn't specific to the data such that it won't generalise well to new data. It's also beneficial to shuffle the data to guard against cases where the data has been ordered.</p>
 
 </div>
 </div>
@@ -12353,7 +12353,7 @@ Think about the pros and cons of adding more training points based on if the tra
 <p><strong>Answer:</strong></p>
 <ul>
 <li>At a maximum depth of 1, the model suffers more from high bias than high variance: while the training score is higher than the validation score, the training score is lower than at any other point in the graph. The validation score is also lower than at any other point in the graph.</li>
-<li>At a maximum depth of 10, the training score is high, but the validation score is decreasing, which is a symptom of overfitting.</li>
+<li>At a maximum depth of 10, the training score is high, but the validation score is decreasing, which is a symptom of overfitting, or high variance.</li>
 </ul>
 
 </div>
@@ -12408,7 +12408,7 @@ Think about the pros and cons of adding more training points based on if the tra
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> Grid search is a technique used to select hyperparameters in a learning algorithm. In short, a matrix (or grid) plotting a hyperparameter against the training and validation scores. For example, in the lectures, the grid was used to select a kernel for a SVM, with the columns corresponding to the kernel (e.g. linear or polynomial), and the rows corresponding to various parameters for gamma. For each cell in this matrix, the F1 score is computed and the cell with the highest F1 score is picked.</p>
+<p><strong>Answer:</strong> Grid search is a technique used to select hyperparameters in a learning algorithm. In short, a matrix (or grid) plotting a hyperparameter against the training and validation scores. For example, in the lectures, the grid was used to select a kernel for a SVM, with the columns corresponding to the kernel (e.g. linear or polynomial), and the rows corresponding to various parameters for gamma. For each cell, grid search trains a model using the hyperparameters corresponding to the row and column (e.g. <code>[('linear', 0.1), ('linear', 1.0), ('linear, 100.0), ('poly', 0.1), ...]</code>), then computes some performance metric (e.g. the F1 score) and assigns that value to the cell. The cell with the highest score is chosen, including the appropriate hyperparameters. The scikit-learn <code>GridSearchCV</code> performs an exhaustive search.</p>
 
 </div>
 </div>
@@ -12435,8 +12435,8 @@ Think about the pros and cons of adding more training points based on if the tra
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <ul>
-<li>In k-fold cross-validation, the training data is broken up into <em>n</em> buckets; training is done <em>n</em> times, using <em>n-1</em> buckets for training and the unused bucket for cross-validation. Each iteration, a different bucket is used for CV.</li>
-<li>Grid search can still provide an answer that overfits the data; you can train the model using the k-fold technique, then use F1 scores of the remaining (CV) bucket as the value for the grid search cell. If you use the full training set to pick a model, there's the possibility of overfitting the data (because <strong>thou shalt never use your testing data to make a decision about the model</strong>).</li>
+<li>In k-fold cross-validation, the training data is broken up into <em>n</em> buckets; training is done <em>n</em> times, using <em>n-1</em> buckets for training and the unused bucket for cross-validation. Each iteration, a different bucket is used for CV. Finally, the iterations are averaged to produce a model.</li>
+<li>Grid search can still provide an answer that overfits the data; you can train the model using the k-fold technique, then use some performance metric (e.g. the F1 score) of the remaining (CV) bucket as the value for the grid search cell. This mechanism allows us to detect high variance models (and the most general model) earlier while allowing us to retain the full training set for training purposes.</li>
 </ul>
 
 </div>

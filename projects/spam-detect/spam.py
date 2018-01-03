@@ -14,7 +14,11 @@ def load_engine(dataset=default_dataset):
 def stats():
     if not engine:
         load_engine()
-    return jsonify(engine.scores)
+    stats = {
+            'scores': engine.scores.copy(),
+            'messages': engine.stats.copy(),
+    }
+    return jsonify(stats)
 
 @app.route('/classify/check', methods=['POST'])
 def classify():

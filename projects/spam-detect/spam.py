@@ -1,5 +1,5 @@
 import classifier
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 default_dataset = './smsspamcollection/SMSSpamCollection'
@@ -16,11 +16,12 @@ def stats():
         load_engine()
     return jsonify(engine.scores)
 
-@app.route('/classify/string:<text>')
-def classify(text):
+@app.route('/classify/check', methods=['POST'])
+def classify():
     if not engine:
         load_engine()
-    return jsonify(text=text, result=engine.predict(text))
+    text = request.form['text']
+    return jsonify(text=text, result=engine.classify([text]))
 
 if __name__ == '__main__':
     load_engine()

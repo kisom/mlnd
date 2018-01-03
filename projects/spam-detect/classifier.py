@@ -34,8 +34,11 @@ class Classifier:
             'f1': f1_score(y_test, predictions),
 	}
 
-    def classify(text):
+    def classify(self, text):
         # this doesn't work --- why not?
-        # matrix = self.cv.fit_transform(text)
-        # return self.naive_bayes.predict(matrix)
-        pass
+        matrix = self.cv.transform(text)
+        prediction = self.naive_bayes.predict(matrix)
+        print(prediction)
+        if prediction[0] == 1:
+            return True
+        return False

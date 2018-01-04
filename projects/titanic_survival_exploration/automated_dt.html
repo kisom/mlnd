@@ -11940,7 +11940,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We know from exploring the data that the Cabin and Ticket columns weren&#39;t useful, so let&#39;s get rid of them.</span>
@@ -11948,6 +11948,7 @@ div#notebook {
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Cabin&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Embarked&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;PassengerId&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># The DecisionTree requires numeric values.</span>
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Sex</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">&#39;male&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;female&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
@@ -11990,7 +11991,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">accuracy_score</span><span class="p">(</span><span class="n">truth</span><span class="p">,</span> <span class="n">pred</span><span class="p">):</span>
@@ -12013,7 +12014,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Decision tree!</span>
@@ -12039,7 +12040,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">experiment</span><span class="p">({</span><span class="s1">&#39;criterion&#39;</span><span class="p">:</span><span class="s1">&#39;gini&#39;</span><span class="p">}))</span>
@@ -12060,8 +12061,8 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>72.292737430167705
-73.715083798882532
+<pre>77.532960893854167
+74.957541899440912
 </pre>
 </div>
 </div>
@@ -12086,7 +12087,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">experiment</span><span class="p">({</span><span class="s1">&#39;criterion&#39;</span><span class="p">:</span><span class="s1">&#39;gini&#39;</span><span class="p">,</span> <span class="s1">&#39;presort&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">}))</span>
@@ -12107,8 +12108,8 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>72.343016759776575
-73.693296089385299
+<pre>77.55418994413337
+74.965363128491148
 </pre>
 </div>
 </div>
@@ -12128,7 +12129,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">base_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;criterion&#39;</span><span class="p">:</span><span class="s1">&#39;entropy&#39;</span><span class="p">}</span>
@@ -12154,7 +12155,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Changing the behavior with an inclusive stop condition.</span>
@@ -12174,7 +12175,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">mpd</span> <span class="ow">in</span> <span class="n">frange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">):</span>
@@ -12196,7 +12197,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0 73.711731843575279
+<pre>0 74.961452513966051
 0.10000000000000001 82.122905027934777
 0.20000000000000001 82.122905027934777
 0.30000000000000004 60.893854748603196
@@ -12226,7 +12227,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">base_params</span><span class="p">[</span><span class="s1">&#39;min_impurity_decrease&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.15</span>
@@ -12268,7 +12269,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">entropy_experiment</span><span class="p">({</span><span class="s1">&#39;splitter&#39;</span><span class="p">:</span><span class="s1">&#39;random&#39;</span><span class="p">}))</span>
@@ -12309,7 +12310,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">graphviz</span>
@@ -12351,7 +12352,7 @@ exporting to graphviz
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[75]:</div>
+<div class="prompt output_prompt">Out[86]:</div>
 
 
 
@@ -12362,52 +12363,52 @@ exporting to graphviz
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: Tree Pages: 1 -->
-<svg width="334pt" height="195pt"
- viewBox="0.00 0.00 333.50 195.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="318pt" height="195pt"
+ viewBox="0.00 0.00 318.00 195.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 191)">
 <title>Tree</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-191 329.5,-191 329.5,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-191 314,-191 314,4 -4,4"/>
 <!-- 0 -->
 <g id="node1" class="node">
 <title>0</title>
-<path fill="#e58139" fill-opacity="0.380392" stroke="#000000" d="M235,-187C235,-187 98,-187 98,-187 92,-187 86,-181 86,-175 86,-175 86,-116 86,-116 86,-110 92,-104 98,-104 98,-104 235,-104 235,-104 241,-104 247,-110 247,-116 247,-116 247,-175 247,-175 247,-181 241,-187 235,-187"/>
-<text text-anchor="start" x="130" y="-171.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">Sex ≤ 0.5</text>
-<text text-anchor="start" x="107" y="-156.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">entropy = 0.959</text>
-<text text-anchor="start" x="112.5" y="-141.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 712</text>
-<text text-anchor="start" x="97" y="-126.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [440, 272]</text>
-<text text-anchor="start" x="94" y="-111.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = PassengerId</text>
+<path fill="#e58139" fill-opacity="0.380392" stroke="#000000" d="M220.5,-187C220.5,-187 89.5,-187 89.5,-187 83.5,-187 77.5,-181 77.5,-175 77.5,-175 77.5,-116 77.5,-116 77.5,-110 83.5,-104 89.5,-104 89.5,-104 220.5,-104 220.5,-104 226.5,-104 232.5,-110 232.5,-116 232.5,-116 232.5,-175 232.5,-175 232.5,-181 226.5,-187 220.5,-187"/>
+<text text-anchor="start" x="118.5" y="-171.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">Sex ≤ 0.5</text>
+<text text-anchor="start" x="95.5" y="-156.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">entropy = 0.959</text>
+<text text-anchor="start" x="101" y="-141.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 712</text>
+<text text-anchor="start" x="85.5" y="-126.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [440, 272]</text>
+<text text-anchor="start" x="105" y="-111.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = Pclass</text>
 </g>
 <!-- 1 -->
 <g id="node2" class="node">
 <title>1</title>
-<path fill="#e58139" fill-opacity="0.756863" stroke="#000000" d="M149,-68C149,-68 12,-68 12,-68 6,-68 0,-62 0,-56 0,-56 0,-12 0,-12 0,-6 6,0 12,0 12,0 149,0 149,0 155,0 161,-6 161,-12 161,-12 161,-56 161,-56 161,-62 155,-68 149,-68"/>
-<text text-anchor="start" x="21" y="-52.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">entropy = 0.714</text>
-<text text-anchor="start" x="26.5" y="-37.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 464</text>
-<text text-anchor="start" x="15.5" y="-22.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [373, 91]</text>
-<text text-anchor="start" x="8" y="-7.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = PassengerId</text>
+<path fill="#e58139" fill-opacity="0.756863" stroke="#000000" d="M134,-68C134,-68 12,-68 12,-68 6,-68 0,-62 0,-56 0,-56 0,-12 0,-12 0,-6 6,0 12,0 12,0 134,0 134,0 140,0 146,-6 146,-12 146,-12 146,-56 146,-56 146,-62 140,-68 134,-68"/>
+<text text-anchor="start" x="13.5" y="-52.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">entropy = 0.714</text>
+<text text-anchor="start" x="19" y="-37.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 464</text>
+<text text-anchor="start" x="8" y="-22.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [373, 91]</text>
+<text text-anchor="start" x="23" y="-7.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = Pclass</text>
 </g>
 <!-- 0&#45;&gt;1 -->
 <g id="edge1" class="edge">
 <title>0&#45;&gt;1</title>
-<path fill="none" stroke="#000000" d="M134.4768,-103.9815C127.5298,-94.9747 120.1731,-85.4367 113.2004,-76.3965"/>
-<polygon fill="#000000" stroke="#000000" points="115.8064,-74.0444 106.9276,-68.2637 110.2636,-78.3196 115.8064,-74.0444"/>
-<text text-anchor="middle" x="103.7263" y="-89.3579" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">True</text>
+<path fill="none" stroke="#000000" d="M124.4662,-103.9815C117.8424,-94.9747 110.8279,-85.4367 104.1795,-76.3965"/>
+<polygon fill="#000000" stroke="#000000" points="106.9426,-74.2461 98.1984,-68.2637 101.3034,-78.3933 106.9426,-74.2461"/>
+<text text-anchor="middle" x="94.4306" y="-89.2781" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">True</text>
 </g>
 <!-- 2 -->
 <g id="node3" class="node">
 <title>2</title>
-<path fill="#399de5" fill-opacity="0.631373" stroke="#000000" d="M313.5,-68C313.5,-68 191.5,-68 191.5,-68 185.5,-68 179.5,-62 179.5,-56 179.5,-56 179.5,-12 179.5,-12 179.5,-6 185.5,0 191.5,0 191.5,0 313.5,0 313.5,0 319.5,0 325.5,-6 325.5,-12 325.5,-12 325.5,-56 325.5,-56 325.5,-62 319.5,-68 313.5,-68"/>
-<text text-anchor="start" x="193" y="-52.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">entropy = 0.842</text>
-<text text-anchor="start" x="198.5" y="-37.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 248</text>
-<text text-anchor="start" x="187.5" y="-22.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [67, 181]</text>
-<text text-anchor="start" x="202.5" y="-7.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = Pclass</text>
+<path fill="#399de5" fill-opacity="0.631373" stroke="#000000" d="M298,-68C298,-68 176,-68 176,-68 170,-68 164,-62 164,-56 164,-56 164,-12 164,-12 164,-6 170,0 176,0 176,0 298,0 298,0 304,0 310,-6 310,-12 310,-12 310,-56 310,-56 310,-62 304,-68 298,-68"/>
+<text text-anchor="start" x="177.5" y="-52.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">entropy = 0.842</text>
+<text text-anchor="start" x="183" y="-37.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">samples = 248</text>
+<text text-anchor="start" x="172" y="-22.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">value = [67, 181]</text>
+<text text-anchor="start" x="195" y="-7.8" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">class = Sex</text>
 </g>
 <!-- 0&#45;&gt;2 -->
 <g id="edge2" class="edge">
 <title>0&#45;&gt;2</title>
-<path fill="none" stroke="#000000" d="M198.5232,-103.9815C205.4702,-94.9747 212.8269,-85.4367 219.7996,-76.3965"/>
-<polygon fill="#000000" stroke="#000000" points="222.7364,-78.3196 226.0724,-68.2637 217.1936,-74.0444 222.7364,-78.3196"/>
-<text text-anchor="middle" x="229.2737" y="-89.3579" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">False</text>
+<path fill="none" stroke="#000000" d="M185.5338,-103.9815C192.1576,-94.9747 199.1721,-85.4367 205.8205,-76.3965"/>
+<polygon fill="#000000" stroke="#000000" points="208.6966,-78.3933 211.8016,-68.2637 203.0574,-74.2461 208.6966,-78.3933"/>
+<text text-anchor="middle" x="215.5694" y="-89.2781" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#000000">False</text>
 </g>
 </g>
 </svg>

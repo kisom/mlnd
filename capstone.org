@@ -17,7 +17,13 @@
 ** Candidate domains
 
    + power grid
+     + power supply forecasting
    + agriculture
    + public health
+     + classifying MRI scans
+   + commercial shipping
+     + navigation
+     + surveying (e.g. ocean bed)
+     + harbour / ship scheduling
 
 ** Interesting data sets

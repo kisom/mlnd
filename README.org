@@ -1,7 +1,7 @@
 #+TITLE: Machine Learning Nanodegree
 
 This is a collection of projects and notes from the Udacity Machine
-Learning nanodegree.
+Learning nanodegree. Also relevant are my MLND [[https://dl.kyleisom.net/tag/mlnd.html][devlog notes]].
 
 * Projects
 
